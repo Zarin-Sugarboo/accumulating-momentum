@@ -14,5 +14,5 @@ A productivity web application designed to break through the overwhelemed of sta
 
 ## 💻 Setup Instructions (How to Run)
 1. Download or clone this repository to your local machine.
-2. Locate the `_study productivity_.html` file in the project folder.
+2. Locate the index.html file in the project folder.
 3. Double-click the file to open and run the application instantly in any web browser—no local servers or installation required!
