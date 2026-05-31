@@ -27,7 +27,7 @@
             position: relative;
             transition: background 1.5s ease;
         }
-
+ 
         body::before {
             content: '';
             position: absolute;
@@ -37,7 +37,7 @@
             transition: all 1.5s ease;
             z-index: 2;
         }
-
+ 
         /* Space Theme Overrides */
         body.theme-space {
             background: radial-gradient(circle at 50% 50%, #0c0f24 0%, #030408 100%);
@@ -47,7 +47,7 @@
             background-size: 24px 24px;
             animation: shiftGlow var(--fx-speed) infinite linear;
         }
-
+ 
         /* Rain Forest Theme Overrides */
         body.theme-forest {
             background: radial-gradient(circle at 50% 50%, #051c14 0%, #020806 100%);
@@ -56,7 +56,7 @@
             background: linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.05) 100%);
             animation: pulseForest 6s infinite alternate ease-in-out;
         }
-
+ 
         /* Cozy Hearth Theme Overrides */
         body.theme-cozy {
             background: radial-gradient(circle at 50% 50%, #1c100b 0%, #080402 100%);
@@ -65,16 +65,16 @@
             background: radial-gradient(circle at 50% 120%, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
             animation: flickerHearth 4s infinite alternate ease-in-out;
         }
-
+ 
         @keyframes shiftGlow { from { background-position: 0 0; } to { background-position: 24px 48px; } }
         @keyframes pulseForest { 0% { opacity: 0.1; } 100% { opacity: 0.3; } }
         @keyframes flickerHearth { 0% { opacity: 0.2; transform: scale(1); } 100% { opacity: 0.3; transform: scale(1.03); } }
-
+ 
         /* General Canvas Structure */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
-
+ 
         .central-stage { position: relative; z-index: 10; width: 100%; max-width: 640px; padding: 20px; }
-
+ 
         .card-view {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -88,13 +88,13 @@
         }
         @keyframes viewFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .active-view { display: block; }
-
+ 
         /* Typography & Layout elements */
         .hook-headline { font-size: 1.8rem; font-weight: 300; line-height: 1.45; margin-bottom: 32px; }
         .hook-headline span { color: #f87171; font-weight: 400; }
         .view-title { font-size: 1.4rem; font-weight: 400; margin-bottom: 8px; letter-spacing: -0.01em; }
         .view-subtitle { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 24px; line-height: 1.5; }
-
+ 
         .action-btn {
             background: var(--text); color: #000; border: none; padding: 14px 28px;
             border-radius: 12px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
@@ -104,25 +104,25 @@
         .action-btn.accent-style { background: var(--accent); color: #fff; box-shadow: 0 10px 20px var(--accent-glow); }
         .action-btn.outline-style { background: transparent; border: 1px solid var(--border); color: var(--text); }
         .action-btn.outline-style:hover { background: rgba(255,255,255,0.03); }
-
+ 
         .text-vent-area {
             width: 100%; height: 130px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border);
             border-radius: 16px; padding: 16px; color: var(--text); font-size: 1rem; resize: none; outline: none; margin-bottom: 20px; line-height: 1.5;
         }
         .text-vent-area:focus { border-color: var(--accent); }
-
+ 
         /* Emotional Agent Layout */
         .agent-container { display: flex; gap: 16px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.12); padding: 18px; border-radius: 18px; margin-bottom: 24px; }
         .agent-avatar { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; margin-top: 6px; box-shadow: 0 0 10px var(--accent); }
         .agent-speech-bubble { font-size: 0.9rem; line-height: 1.5; color: #e2e8f0; font-weight: 300; }
-
+ 
         /* Timer Modules */
         .momentum-timer-deck { background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); border-radius: 16px; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
         .timer-numeric { font-size: 2.2rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
         .btn-cluster-row { display: flex; gap: 8px; }
         .micro-control-btn { background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border); color: var(--text); padding: 8px 14px; border-radius: 8px; font-size: 0.75rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
         .micro-control-btn:hover { background: rgba(255, 255, 255, 0.1); }
-
+ 
         /* Step Card Layouts */
         .checklist-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
         .step-card-row { background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border); padding: 14px 18px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s ease; }
@@ -131,25 +131,24 @@
         .step-card-row.step-done { opacity: 0.35; }
         .step-card-row.step-done .step-card-text { text-decoration: line-through; }
         .step-card-row.step-done .step-checkbox-trigger { background: var(--success); border-color: transparent; }
-        
-        /* New Delete Button Style */
+         
         .step-delete-btn { background: none; border: none; color: var(--text-dim); font-size: 1.2rem; cursor: pointer; padding: 0 4px; display: flex; align-items: center; justify-content: center; transition: color 0.2s ease; margin-left: 10px; }
         .step-delete-btn:hover { color: #f87171; }
-
+ 
         /* Decision Fork Option Layout */
         .fork-layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
         .fork-choice-card { background: rgba(255,255,255,0.01); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; cursor: pointer; transition: all 0.2s; }
         .fork-choice-card:hover { border-color: var(--accent); background: rgba(139, 92, 246, 0.02); transform: scale(1.02); }
         .fork-icon { font-size: 1.8rem; margin-bottom: 12px; }
-
+ 
         /* --- DEEP WORKSPACE MODULAR HOOKS --- */
         .workspace-split-layout { display: flex; flex-direction: column; gap: 18px; }
         .workspace-widget-panel { background: rgba(0,0,0,0.15); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
-        
+         
         .tab-toggle-container { display: flex; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 4px; margin-bottom: 16px; gap: 4px; }
         .tab-trigger-btn { flex: 1; background: none; border: none; padding: 8px; color: var(--text-dim); font-size: 0.8rem; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
         .tab-trigger-btn.tab-active { background: var(--accent); color: white; }
-
+ 
         .inline-todo-input-row { display: flex; gap: 10px; margin-top: 12px; }
         .inline-text-field { flex: 1; background: rgba(0,0,0,0.25); border: 1px solid var(--border); padding: 10px 14px; border-radius: 8px; color: white; outline: none; font-size: 0.9rem; }
         .config-controls-row { display: flex; gap: 16px; margin-bottom: 16px; align-items: center; justify-content: space-between; }
@@ -158,173 +157,199 @@
 </head>
 <body class="theme-space">
     <div class="central-stage">
-
+ 
         <div class="card-view active-view" id="viewStage1">
             <p class="hook-headline">
                 Piled up tasks can feel overwhelming. Deadlines are terrifying. When your brain is <span style="color: #f87171;">completely freezed by anxiety</span>, small progress compounds into momentum.
             </p>
             <button class="action-btn" onclick="switchViewLayout(2)">
                 Unburden Your Mind →
-            </button>
+           </button>
         </div>
-
+ 
         <div class="card-view" id="viewStage2">
             <div style="margin-bottom: 20px; display: flex; align-items: center;">
-                <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(1)">←</button>
-            </div>
+               <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(1)">←</button>
+           </div>
             <h2 class="view-title">Vent it out.</h2>
             <p class="view-subtitle">Don't structure it. Type out the messy chaos causing pressure in your head right now.</p>
-            <textarea class="text-vent-area" id="userVentBox" placeholder="i have a huge exam tomorrow and i haven't opened the textbook and i'm going to fail..."></textarea>
-            <div>
-                <button class="action-btn accent-style" onclick="runEmotionalDecompressorEngine()">
-                    Breathe & Organize
-                </button>
-            </div>
+           <textarea class="text-vent-area" id="userVentBox" placeholder="i have a huge exam tomorrow and i haven't opened the textbook and i'm going to fail..."></textarea>
+           <div>
+               <button class="action-btn accent-style" onclick="runEmotionalDecompressorEngine()">
+                   Breathe & Organize
+               </button>
+           </div>
         </div>
-
+ 
         <div class="card-view" id="viewStage3">
             <div style="margin-bottom: 20px; display: flex; align-items: center;">
-                <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(2)">←</button>
-            </div>
-
+               <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(2)">←</button>
+           </div>
+ 
             <div class="agent-container">
-                <div class="agent-avatar"></div>
-                <div class="agent-speech-bubble" id="aiCoachSpeech"></div>
-            </div>
-
+               <div class="agent-avatar"></div>
+               <div class="agent-speech-bubble" id="aiCoachSpeech"></div>
+           </div>
+ 
             <div class="momentum-timer-deck">
-                <div class="timer-numeric" id="timeDisplay">02:00</div>
-                <div class="btn-cluster-row">
-                    <button class="micro-control-btn" id="sprintPauseBtn" onclick="toggleSprintTimerState()">Start</button>
-                    <button class="micro-control-btn" onclick="resetSprintTimerState()">Reset</button>
-                    <button class="micro-control-btn" style="border-color: rgba(255,255,255,0.15);" onclick="forceTimerCompletionDemo()">Fast Forward</button>
-                </div>
-            </div>
-
+               <div class="timer-numeric" id="timeDisplay">02:00</div>
+               <div class="btn-cluster-row">
+                   <button class="micro-control-btn" id="sprintPauseBtn" onclick="toggleSprintTimerState()">Start</button>
+                   <button class="micro-control-btn" onclick="resetSprintTimerState()">Reset</button>
+                   <button class="micro-control-btn" style="border-color: rgba(255,255,255,0.15);" onclick="forceTimerCompletionDemo()">Fast Forward</button>
+               </div>
+           </div>
+ 
             <h3 class="view-title" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px;">Your Small Start Strategy</h3>
             <div class="checklist-stack" id="dynamicStepsBox"></div>
         </div>
-
+ 
         <div class="card-view" id="viewStage4">
             <div style="margin-bottom: 20px; display: flex; align-items: center;">
-                <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(3)">←</button>
-            </div>
-
+               <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(3)">←</button>
+           </div>
+ 
             <h2 class="view-title" style="text-align: center;">First Step Completed. ✨</h2>
             <p class="view-subtitle" style="text-align: center;">Excellent job breaking the initial friction loop. Let's check in: How are you feeling right now?</p>
-
+ 
             <div class="fork-layout-grid">
-                <div class="fork-choice-card" onclick="routeToWorkspace('break')">
-                    <div class="fork-icon">🍃</div>
-                    <h4 style="margin-bottom: 6px;">Still Overwhelmed</h4>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">I need a controlled, zero-guilt break to calm down.</p>
-                </div>
-                <div class="fork-choice-card" onclick="routeToWorkspace('study')">
-                    <div class="fork-icon">🚀</div>
-                    <h4 style="margin-bottom: 6px;">Building Momentum</h4>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">I'm ready. Let's scale up into the deep study view.</p>
-                </div>
+               <div class="fork-choice-card" onclick="routeToWorkspace('break')">
+                   <div class="fork-icon">🍃</div>
+                   <h4 style="margin-bottom: 6px;">Still Overwhelmed</h4>
+                   <p style="font-size: 0.8rem; color: var(--text-dim);">I need a controlled, zero-guilt break to calm down.</p>
+               </div>
+               <div class="fork-choice-card" onclick="routeToWorkspace('study')">
+                   <div class="fork-icon">🚀</div>
+                   <h4 style="margin-bottom: 6px;">Building Momentum</h4>
+                   <p style="font-size: 0.8rem; color: var(--text-dim);">I'm ready. Let's scale up into the deep study view.</p>
+               </div>
             </div>
         </div>
             
         <div class="card-view" id="viewStageBreak">
             <div style="margin-bottom: 20px; display: flex; align-items: center;">
-                <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(4)">←</button>
-            </div>
-
+               <button class="micro-control-btn" style="font-size: 1rem; padding: 4px 12px;" onclick="switchViewLayout(4)">←</button>
+           </div>
+ 
             <h2 class="view-title">Guilt-Free Recharge Sanctuary ☕</h2>
             <p class="view-subtitle">The clock is paused. Your work is safely saved. Choose one simple restorative task to reset your neurological state:</p>
             
-            <div class="checklist-stack">
-                <div class="step-card-row">
-                    <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
-                        <div class="step-checkbox-trigger"></div>
-                        <div class="step-card-text"><strong>Breathe:</strong> 4-7-8 Box Cycle (Inhale 4s, hold 7s, exhale 8s)</div>
-                    </div>
-                </div>
-                <div class="step-card-row">
-                    <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
-                        <div class="step-checkbox-trigger"></div>
-                        <div class="step-card-text"><strong>Hydrate:</strong> Grab a cool glass of water to clear cognitive fuzz</div>
-                    </div>
-                </div>
-                <div class="step-card-row">
-                    <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
-                        <div class="step-checkbox-trigger"></div>
-                        <div class="step-card-text"><strong>Decompress:</strong> Rest your eyes away from your display panel for 60s</div>
-                    </div>
+            <!-- Break Zone 5-Minute Manual Timer Component -->
+            <div class="momentum-timer-deck" style="margin-bottom: 24px;">
+                <div class="timer-numeric" id="breakTimeDisplay" style="color: #10b981;">05:00</div>
+                <div class="btn-cluster-row" id="breakTimerControls">
+                    <button class="micro-control-btn" id="breakPauseBtn" onclick="toggleBreakTimerState()">Start Break</button>
+                    <button class="micro-control-btn" onclick="resetBreakTimerState()">Reset</button>
+                    <button class="micro-control-btn" style="border-color: rgba(255,255,255,0.15);" onclick="forceBreakCompletion()">Skip</button>
                 </div>
             </div>
-        </div>
 
+            <!-- Dive In Button (Hidden until timer ends) -->
+            <div id="diveInContainer" style="display: none; text-align: center; margin-bottom: 24px; animation: viewFadeIn 0.4s ease;">
+                <button class="action-btn accent-style" style="width: 100%; justify-content: center; background: #10b981; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);" onclick="switchViewLayout('Study')">
+                    Ready to dive in?
+                </button>
+            </div>
+
+            <div class="checklist-stack">
+               <div class="step-card-row">
+                   <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
+                       <div class="step-checkbox-trigger"></div>
+                       <div class="step-card-text"><strong>Breathe:</strong> 4-7-8 Box Cycle (Inhale 4s, hold 7s, exhale 8s)</div>
+                   </div>
+               </div>
+               <div class="step-card-row">
+                   <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
+                       <div class="step-checkbox-trigger"></div>
+                       <div class="step-card-text"><strong>Hydrate:</strong> Grab a cool glass of water to clear cognitive fuzz</div>
+                   </div>
+               </div>
+              <div class="step-card-row">
+                   <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
+                       <div class="step-checkbox-trigger"></div>
+                       <div class="step-card-text"><strong>Decompress:</strong> Rest your eyes away from your display panel for 60s</div>
+                   </div>
+               </div>
+           </div>
+        </div>
+ 
         <div class="card-view" id="viewStageStudy">
             <div class="config-controls-row">
-                <h2 class="view-title" style="margin-bottom: 0;">Deep Focus Station</h2>
-                <div style="display: flex; gap: 8px;">
-                    <select class="selector-menu" id="ambientSwitcher" onchange="changeVisualBackgroundTheme(this.value)">
-                        <option value="space">🌌 Deep Space Dust</option>
-                        <option value="forest">🌲 Canopy Rainforest</option>
-                        <option value="cozy">🔥 Crackling Hearth Fire</option>
-                    </select>
-                    <select class="selector-menu" id="audioPlayerMenu" onchange="handleNatureAudioSelection(this.value)">
-                        <option value="none">🔇 Audio Off</option>
-                        <option value="rain">🌧️ Raindrops</option>
-                        <option value="fire">🔥 Fire Crackling</option>
-                        <option value="forest">🐦 Forest Aviary</option>
-                    </select>
+                <!-- Clean, compact header element built strictly on one single line in a smaller size -->
+                <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                    <button class="micro-control-btn" style="font-size: 0.85rem; padding: 4px 10px;" onclick="switchViewLayout(4)">←</button>
+                    <span style="font-size: 1.05rem; font-weight: 500; color: #fff; letter-spacing: -0.01em;">Deep Focus Station</span>
                 </div>
-            </div>
-
+               <div style="display: flex; gap: 6px;">
+                   <select class="selector-menu" id="ambientSwitcher" style="padding: 6px 10px; font-size: 0.8rem;" onchange="changeVisualBackgroundTheme(this.value)">
+                       <option value="space">🌌 Space</option>
+                       <option value="forest">🌲 Forest</option>
+                       <option value="cozy">🔥 Hearth</option>
+                   </select>
+                   <select class="selector-menu" id="audioPlayerMenu" style="padding: 6px 10px; font-size: 0.8rem;" onchange="handleNatureAudioSelection(this.value)">
+                        <option value="none">🔇 Off</option>
+                       <option value="rain">🌧️ Rain</option>
+                       <option value="fire">🔥 Fire</option>
+                       <option value="forest">🐦 Birds</option>
+                   </select>
+               </div>
+           </div>
+ 
             <div class="workspace-split-layout">
-                <div class="workspace-widget-panel">
-                    <div class="tab-toggle-container">
-                        <button class="tab-trigger-btn tab-active" id="modeBtnTimer" onclick="setDualEngineFocusMode('timer')">Focus Timer</button>
-                        <button class="tab-trigger-btn" id="modeBtnStopwatch" onclick="setDualEngineFocusMode('stopwatch')">Stopwatch</button>
-                    </div>
-
-                    <div style="text-align: center; padding: 10px 0;">
-                        <div class="timer-numeric" id="mainEngineDisplay" style="font-size: 2.8rem; color: var(--accent); margin-bottom: 12px;">25:00</div>
-                        
-                        <div id="timerConfigPickerRow" style="margin-bottom: 14px; display: flex; justify-content: center; gap: 6px; align-items: center; font-size: 0.85rem; color: var(--text-dim);">
-                            <span>Target Minutes:</span>
-                            <input type="number" class="selector-menu" style="width: 70px; padding: 4px 8px; text-align: center;" id="timerMinSelector" value="25" min="1" max="180" oninput="setupCustomFocusTimerDuration(this.value)">
-                        </div>
-
-                        <div style="display: flex; justify-content: center; gap: 8px;">
-                            <button class="action-btn" style="padding: 8px 20px; font-size: 0.8rem;" id="engineControlBtn" onclick="toggleMainEngineExecutionState()">Start Focus</button>
-                            <button class="action-btn outline-style" style="padding: 8px 20px; font-size: 0.8rem;" onclick="resetMainEngineState()">Reset</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="workspace-widget-panel">
-                    <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 10px;">Your Active Task Backlog</h4>
-                    <div class="checklist-stack" id="workspaceTodoContainer">
-                        <div class="step-card-row">
-                            <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
+               <div class="workspace-widget-panel">
+                   <div class="tab-toggle-container">
+                       <button class="tab-trigger-btn tab-active" id="modeBtnTimer" onclick="setDualEngineFocusMode('timer')">Focus Timer</button>
+                       <button class="tab-trigger-btn" id="modeBtnStopwatch" onclick="setDualEngineFocusMode('stopwatch')">Stopwatch</button>
+                   </div>
+ 
+                   <div style="text-align: center; padding: 10px 0;">
+                       <div class="timer-numeric" id="mainEngineDisplay" style="font-size: 2.8rem; color: var(--accent); margin-bottom: 12px;">25:00</div>
+                       
+                       <div id="timerConfigPickerRow" style="margin-bottom: 14px; display: flex; justify-content: center; gap: 6px; align-items: center; font-size: 0.85rem; color: var(--text-dim);">
+                          <span>Target Minutes:</span>
+                           <input type="number" class="selector-menu" style="width: 70px; padding: 4px 8px; text-align: center;" id="timerMinSelector" value="25" min="1" max="180" oninput="setupCustomFocusTimerDuration(this.value)">
+                       </div>
+ 
+                       <div style="display: flex; justify-content: center; gap: 8px;">
+                           <button class="action-btn" style="padding: 8px 20px; font-size: 0.8rem;" id="engineControlBtn" onclick="toggleMainEngineExecutionState()">Start Focus</button>
+                           <button class="action-btn outline-style" style="padding: 8px 20px; font-size: 0.8rem;" onclick="resetMainEngineState()">Reset</button>
+                       </div>
+                   </div>
+               </div>
+ 
+               <div class="workspace-widget-panel">
+                   <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 10px;">Your Active Task Backlog</h4>
+                   <div class="checklist-stack" id="workspaceTodoContainer">
+                       <div class="step-card-row">
+                           <div class="step-content-left" onclick="this.parentElement.classList.toggle('step-done')">
                                 <div class="step-checkbox-trigger"></div>
                                 <div class="step-card-text" id="transferredCoreTask">Isolate Core Concepts</div>
-                            </div>
-                            <button class="step-delete-btn" onclick="this.parentElement.remove()">×</button>
-                        </div>
+                           </div>
+                           <button class="step-delete-btn" onclick="this.parentElement.remove()">×</button>
+                       </div>
                     </div>
-                    <div class="inline-todo-input-row">
-                        <input type="text" class="inline-text-field" id="newWorkspaceTaskInput" placeholder="Add target sprint step...">
-                        <button class="action-btn accent-style" style="padding: 10px 16px;" onclick="addCustomTaskToWorkspace()">+</button>
-                    </div>
-                </div>
-            </div>
-
+                   <div class="inline-todo-input-row">
+                       <input type="text" class="inline-text-field" id="newWorkspaceTaskInput" placeholder="Add target sprint step...">
+                       <button class="action-btn accent-style" style="padding: 10px 16px;" onclick="addCustomTaskToWorkspace()">+</button>
+                   </div>
+               </div>
+           </div>
+ 
             <button class="action-btn outline-style" style="margin-top: 20px; font-size: 0.8rem; padding: 8px 16px;" onclick="restartDemoSequence()">↺ Restart Pitch Demo</button>
         </div>
-
+ 
     </div>
-
+ 
     <script>
         /* --- STATE INFRASTRUCTURE CONFIGURATION --- */
         let sprintSeconds = 120; // 2:00
         let sprintIsActive = false;
         let sprintIntervalId;
+ 
+        // Break Zone State Management Engine variables
+        let breakSeconds = 300; // 5:00
+        let breakIsActive = false;
+        let breakIntervalId;
 
         // Workspace engine variables
         let engineMode = 'timer';
@@ -332,72 +357,120 @@
         let engineIntervalId;
         let timerSecondsRemaining = 1500;
         let stopwatchAccumulatedSeconds = 0;
-
+ 
         // Audio Context Engine
         let audioCtx = null;
         let audioNoiseNode = null;
         let audioFilterNode = null;
-
+ 
         function switchViewLayout(id) {
             document.querySelectorAll('.card-view').forEach(v => v.classList.remove('active-view'));
-            // Use accurate capitalization check or normalize elements
-            const targetEl = document.getElementById('viewStage' + id) || document.getElementById('viewStage' + id.toString().toLowerCase());
+            let searchId = 'viewStage' + id;
+            if (id === 'break' || id === 'Break') {
+                searchId = 'viewStageBreak';
+                resetBreakTimerState(); // Always reset break elements to an active ready configuration when entering
+            }
+            if (id === 'study' || id === 'Study') searchId = 'viewStageStudy';
+            
+            const targetEl = document.getElementById(searchId);
             if (targetEl) targetEl.classList.add('active-view');
         }
+ 
+        function runEmotionalDecompressorEngine() {
+            const inputVal = document.getElementById('userVentBox').value.trim();
+            document.getElementById('transferredCoreTask').innerText = inputVal ? `Tackle: "${inputVal}"` : "Isolate Core Target Concepts";
+            
+            document.getElementById('aiCoachSpeech').innerHTML = "I have filtered the background noise. <strong>You are completely safe.</strong> We shortened our initialization window to exactly <strong>2 minutes</strong> to ease task friction. Let's claim an immediate micro-victory.";
+            
+            const stepsBox = document.getElementById('dynamicStepsBox');
+            
+            stepsBox.innerHTML = `
+                <div class="step-card-row">
+                    <div class="step-content-left" onclick="handleStepDoneTrigger(this.parentElement)">
+                        <div class="step-checkbox-trigger"></div>
+                        <div class="step-card-text">Isolate one specific blueprint window or text outline source</div>
+                    </div>
+                    <button class="step-delete-btn" onclick="this.parentElement.remove(); checkSprintStepsCompletion();">×</button>
+                </div>
+                <div class="step-card-row">
+                    <div class="step-content-left" onclick="handleStepDoneTrigger(this.parentElement)">
+                        <div class="step-checkbox-trigger"></div>
+                        <div class="step-card-text">Mute notifications and lock in a single-task bubble window</div>
+                    </div>
+                    <button class="step-delete-btn" onclick="this.parentElement.remove(); checkSprintStepsCompletion();">×</button>
+                </div>
+            `; 
+         
+            switchViewLayout(3);
+         
+            if (typeof sprintIntervalId !== 'undefined') {
+                clearInterval(sprintIntervalId);
+            }
+            
+            sprintIsActive = false; 
+            sprintSeconds = 120; 
+         
+            const timeDisplay = document.getElementById('timeDisplay');
+            if (timeDisplay) {
+                timeDisplay.textContent = "02:00";
+            }
+         
+            const startBtn = document.getElementById('sprintPauseBtn');
+            if (startBtn) {
+                startBtn.textContent = "Start";
+            }
+        }
 
-     function runEmotionalDecompressorEngine() {
-    const inputVal = document.getElementById('userVentBox').value.trim();
-    document.getElementById('transferredCoreTask').innerText = inputVal ? `Tackle: "${inputVal}"` : "Isolate Core Target Concepts";
-    
-    document.getElementById('aiCoachSpeech').innerHTML = "I have filtered the background noise. <strong>You are completely safe.</strong> We shortened our initialization window to exactly <strong>2 minutes</strong> to ease task friction. Let's claim an immediate micro-victory.";
-    
-    const stepsBox = document.getElementById('dynamicStepsBox');
-    
-    // --- STEP BACKTICKS WRAPPED CORRECTLY START ---
-    stepsBox.innerHTML = `
-        <div class="step-card-row">
-            <div class="step-content-left" onclick="handleStepDoneTrigger(this.parentElement)">
-                <div class="step-checkbox-trigger"></div>
-                <div class="step-card-text">Isolate one specific blueprint window or text outline source</div>
-            </div>
-            <button class="step-delete-btn" onclick="this.parentElement.remove(); checkSprintStepsCompletion();">×</button>
-        </div>
-        <div class="step-card-row">
-            <div class="step-content-left" onclick="handleStepDoneTrigger(this.parentElement)">
-                <div class="step-checkbox-trigger"></div>
-                <div class="step-card-text">Mute notifications and lock in a single-task bubble window</div>
-            </div>
-            <button class="step-delete-btn" onclick="this.parentElement.remove(); checkSprintStepsCompletion();">×</button>
-        </div>
-    `; 
-    // --- STEP BACKTICKS WRAPPED CORRECTLY END ---
+        /* --- BREAK ZONE TIMER ENGINE LOGIC --- */
+        function toggleBreakTimerState() {
+            breakIsActive = !breakIsActive;
+            document.getElementById('breakPauseBtn').innerText = breakIsActive ? "Pause" : "Start Break";
+            
+            if (breakIsActive) {
+                breakIntervalId = setInterval(() => {
+                    if (breakSeconds > 0) {
+                        breakSeconds--;
+                        updateBreakDisplayValues();
+                    } else {
+                        forceBreakCompletion();
+                    }
+                }, 1000);
+            } else {
+                clearInterval(breakIntervalId);
+            }
+        }
 
-    // --- VIEW SWITCH & ENGINE STATE CONFIGURATION ---
-    switchViewLayout(3);
+        function resetBreakTimerState() {
+            clearInterval(breakIntervalId);
+            breakIsActive = false;
+            breakSeconds = 300; // Reset back to a full 5 minutes
+            updateBreakDisplayValues();
+            document.getElementById('breakPauseBtn').innerText = "Start Break";
+            document.getElementById('breakTimerControls').style.display = "flex";
+            document.getElementById('diveInContainer').style.display = "none";
+        }
 
-    if (typeof sprintIntervalId !== 'undefined') {
-        clearInterval(sprintIntervalId);
-    }
-    
-    sprintIsActive = false; 
-    sprintSeconds = 120; 
+        function updateBreakDisplayValues() {
+            let m = Math.floor(breakSeconds / 60);
+            let s = breakSeconds % 60;
+            document.getElementById('breakTimeDisplay').innerText = `${m < 10 ? '0':''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
 
-    const timeDisplay = document.getElementById('timeDisplay');
-    if (timeDisplay) {
-        timeDisplay.textContent = "02:00";
-    }
-
-    const startBtn = document.getElementById('sprintPauseBtn');
-    if (startBtn) {
-        startBtn.textContent = "Start";
-    }
-}
+        function forceBreakCompletion() {
+            clearInterval(breakIntervalId);
+            breakSeconds = 0;
+            updateBreakDisplayValues();
+            // Swap controls seamlessly with your dive-in button hook
+            document.getElementById('breakTimerControls').style.display = "none";
+            document.getElementById('diveInContainer').style.display = "block";
+            playSynthesizedBeep(580, 0.25);
+        }
 
         /* --- STAGE 3: SPRINT TIMER CONTROLS --- */
         function toggleSprintTimerState() {
             sprintIsActive = !sprintIsActive;
             document.getElementById('sprintPauseBtn').innerText = sprintIsActive ? "Pause" : "Start";
-            
+                                                                                
             if (sprintIsActive) {
                 sprintIntervalId = setInterval(() => {
                     if (sprintSeconds > 0) {
@@ -411,7 +484,7 @@
                 clearInterval(sprintIntervalId);
             }
         }
-
+ 
         function resetSprintTimerState() {
             clearInterval(sprintIntervalId);
             sprintIsActive = false;
@@ -424,29 +497,29 @@
             let s = sprintSeconds % 60;
             document.getElementById('timeDisplay').innerText = `${m < 10 ? '0':''}${m}:${s < 10 ? '0' : ''}${s}`;
         }
-
+ 
         function handleStepDoneTrigger(el) {
             el.classList.toggle('step-done');
             checkSprintStepsCompletion();
         }
-
+ 
         function checkSprintStepsCompletion() {
             const items = document.querySelectorAll('#dynamicStepsBox .step-card-row');
             if(items.length > 0 && document.querySelectorAll('#dynamicStepsBox .step-card-row:not(.step-done)').length === 0) {
                 setTimeout(forceTimerCompletionDemo, 600);
             }
         }
-
+ 
         function forceTimerCompletionDemo() {
             clearInterval(sprintIntervalId);
             switchViewLayout(4);
         }
-
+ 
         function routeToWorkspace(type) {
             if(type === 'break') switchViewLayout('Break');
             if(type === 'study') switchViewLayout('Study');
         }
-
+ 
         /* --- STAGE 5B: DUAL ENGINE MECHANICS (TIMER VS STOPWATCH) --- */
         function setDualEngineFocusMode(mode) {
             if (engineIsRunning) resetMainEngineState();
@@ -458,12 +531,12 @@
             
             resetMainEngineState();
         }
-
+ 
         function setupCustomFocusTimerDuration(mins) {
             timerSecondsRemaining = parseInt(mins) * 60;
             updateMainEngineDisplayValues();
         }
-
+ 
         function toggleMainEngineExecutionState() {
             engineIsRunning = !engineIsRunning;
             document.getElementById('engineControlBtn').innerText = engineIsRunning ? "Pause" : "Start Focus";
@@ -474,7 +547,7 @@
                         if (timerSecondsRemaining > 0) {
                             timerSecondsRemaining--;
                             if (timerSecondsRemaining > 0 && timerSecondsRemaining <= 3) {
-                                playSynthesizedBeep(800, 0.1);
+                                 playSynthesizedBeep(800, 0.1);
                             }
                         } else {
                             resetMainEngineState();
@@ -489,7 +562,7 @@
                 clearInterval(engineIntervalId);
             } 
         }
-
+ 
         function resetMainEngineState() {
             clearInterval(engineIntervalId);
             engineIsRunning = false;
@@ -508,7 +581,7 @@
             if (engineMode === 'timer') {
                 let totalSecs = timerSecondsRemaining;
                 if (isNaN(totalSecs) || totalSecs < 0) totalSecs = 0;
-
+ 
                 let m = Math.floor(totalSecs / 60);
                 let s = totalSecs % 60;
                 displayStr = `${m < 10 ? '0':''}${m}:${s < 10 ? '0':''}${s}`;
@@ -520,7 +593,7 @@
             }
             document.getElementById('mainEngineDisplay').innerText = displayStr;
         }
-
+ 
         function addCustomTaskToWorkspace() {
             const field = document.getElementById('newWorkspaceTaskInput');
             if(!field.value.trim()) return;
@@ -536,31 +609,29 @@
             document.getElementById('workspaceTodoContainer').appendChild(item);
             field.value = "";
         }
-
+ 
         function changeVisualBackgroundTheme(themeName) {
             document.body.className = '';
             document.body.classList.add('theme-' + themeName);
         }
-
+ 
         /* --- REAL-TIME NATURE SOUND SYNTHESIS ENGINE --- */
-        let fireIntervalId = null; // Fix: Reference to clear the crackle interval
-
+        let fireIntervalId = null; 
+ 
         function handleNatureAudioSelection(soundType) {
-            // Fix: Clear any existing fire interval loop to prevent memory leaks and errors
             if (fireIntervalId) {
                 clearInterval(fireIntervalId);
                 fireIntervalId = null;
             }
-
+ 
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             }
             
-            // Fix: Browser security policy workaround (Resumes context if suspended)
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume();
             }
-
+ 
             if (audioNoiseNode) {
                 try { audioNoiseNode.stop(); } catch(e){}
                 audioNoiseNode.disconnect();
@@ -569,10 +640,10 @@
             if (audioFilterNode) {
                 audioFilterNode.disconnect();
                 audioFilterNode = null;
-            }
-
+           }
+ 
             if (soundType === 'none') return;
-
+ 
             const bufferSize = 2 * audioCtx.sampleRate;
             const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
             const output = noiseBuffer.getChannelData(0);
@@ -591,13 +662,13 @@
                 output[i] *= 0.11; 
                 b6 = white * 0.115926;
             }
-
+ 
             audioNoiseNode = audioCtx.createBufferSource();
             audioNoiseNode.buffer = noiseBuffer;
             audioNoiseNode.loop = true;
-
+ 
             audioFilterNode = audioCtx.createBiquadFilter();
-
+ 
             if (soundType === 'rain') {
                 audioFilterNode.type = 'bandpass';
                 audioFilterNode.frequency.value = 800;
@@ -605,7 +676,6 @@
             } else if (soundType === 'fire') {
                 audioFilterNode.type = 'lowpass';
                 audioFilterNode.frequency.value = 400;
-                // Fix: Save interval reference so it can be destroyed later
                 fireIntervalId = setInterval(() => {
                     if (audioFilterNode && soundType === 'fire') {
                         audioFilterNode.frequency.setValueAtTime(300 + Math.random() * 200, audioCtx.currentTime);
@@ -616,12 +686,12 @@
                 audioFilterNode.frequency.value = 2500;
                 audioFilterNode.gain.value = 10;
             }
-
+ 
             audioNoiseNode.connect(audioFilterNode);
             audioFilterNode.connect(audioCtx.destination);
             audioNoiseNode.start();
         }
-
+ 
         function restartDemoSequence() {
             clearInterval(sprintIntervalId);
             resetMainEngineState();
@@ -632,10 +702,10 @@
             document.getElementById('ambientSwitcher').value = 'space';
             switchViewLayout(1);
         }
-
+ 
         function playSynthesizedBeep(frequency, duration) {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioCtx.state === 'suspended') audioCtx.resume(); // Fix: Force activation
+            if (audioCtx.state === 'suspended') audioCtx.resume(); 
             
             let osc = audioCtx.createOscillator();
             let gainNode = audioCtx.createGain();
@@ -652,25 +722,33 @@
             osc.start();
             osc.stop(audioCtx.currentTime + duration);
         }
-
+ 
         function triggerFinalAlarmSequence() {
             playSynthesizedBeep(520, 0.2);
             setTimeout(() => playSynthesizedBeep(520, 0.2), 250);
             setTimeout(() => playSynthesizedBeep(660, 0.4), 500);
             document.getElementById('customSuccessModal').style.display = 'flex';
         }
-
+ 
         function closeSuccessModal() {
             document.getElementById('customSuccessModal').style.display = 'none';
         }
     </script>
-
+ 
     <div id="customSuccessModal" style="display: none; position: fixed; inset: 0; background: rgba(3, 4, 8, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 9999; align-items: center; justify-content: center; animation: viewFadeIn 0.3s ease;">
-        <div style="background: #0d111c; border: 1px solid rgba(139, 92, 246, 0.3); padding: 40px; border-radius: 24px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);">
+        <div style="background: #0d111c; border: 1px solid rgba(139, 92, 246, 0.3); padding: 40px; border-radius: 24px; text-align: center; max-width: 420px; width: 90%; box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);">
             <div style="font-size: 3rem; margin-bottom: 16px; animation: pulseForest 2s infinite alternate;">🏆</div>
             <h3 style="font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; color: #fff;">Session Complete!</h3>
             <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 24px; line-height: 1.5;">Beautifully executed. Your focus engine session has concluded successfully. Take a moment to stretch and breathe.</p>
-            <button class="action-btn accent-style" style="width: 100%; justify-content: center;" onclick="closeSuccessModal()">Acknowledged</button>
+            
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button class="action-btn accent-style" style="width: 100%; justify-content: center;" onclick="closeSuccessModal(); switchViewLayout('Break');">
+                    🍃 Take a Break
+                </button>
+                <button class="action-btn outline-style" style="width: 100%; justify-content: center; font-size: 0.9rem; padding: 12px;" onclick="closeSuccessModal(); resetMainEngineState();">
+                    🚀 Start Another Session
+                </button>
+            </div>
         </div>
     </div>
 </body>
